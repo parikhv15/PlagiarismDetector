@@ -26,7 +26,7 @@ mvn clean package
 
 2) Run Project
 ```
-java -jar target/plagiarism-detector-0.0.1-SNAPSHOT.jar <synonym_filename> <input1_filename> <input2_filename> <N_value>
+java -jar target/com.plag-detector-1.0-SNAPSHOT.jar <synonym_filename> <input1_filename> <input2_filename> <N_value>
 ```
 
 ### License
