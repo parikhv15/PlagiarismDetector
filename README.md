@@ -11,7 +11,9 @@
  3. Input file 2 name
  4. Tuple Size [Default is 3]
 
- Program outputs the percent of tuples in file1 which appear in file2.
+Input file may contain punctuations.
+
+Program outputs the percent of tuples in file1 which appear in file2.
 
 Dependencies : [Java 7] (http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html "JDK 7") | [Maven] (https://maven.apache.org/download.cgi "Maven Build")
 
