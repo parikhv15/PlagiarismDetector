@@ -6,13 +6,12 @@
 
  It takes in 3 required arguments, and 1 optional argument.
 
- 1) file name for a list of synonyms
- 2) input file 1
- 3) input file 2
- 4) (optional) the number N, the tuple size.  If not supplied, the default should be N=3
+ 1. file name for a list of synonyms
+ 2. input file 1
+ 3. input file 2
+ 4. (optional) the number N, the tuple size.  If not supplied, the default should be N=3
 
  Program outputs the percent of tuples in file1 which appear in file2.
-
 
 Dependencies : [Java 7] (http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html "JDK 7") | [Maven] (https://maven.apache.org/download.cgi "Maven Build")
 
