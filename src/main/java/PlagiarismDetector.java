@@ -8,6 +8,10 @@ import java.util.List;
 /**
  * Created by vrajp on 5/17/2016.
  */
+
+/**
+ * Main Class
+ */
 public class PlagiarismDetector {
 
     public static final int NUM_ARGS = 4;
@@ -15,42 +19,27 @@ public class PlagiarismDetector {
     public static void main( String args[] ) {
         PlagiarismDetector plagiarismDetector = new PlagiarismDetector();
 
+        PlagiarismService plagiarismService = new PlagiarismService();
+
         InputWrapper inputWrapper = plagiarismDetector.validateInput(args);
 
-        try {
-            HashMap<String, HashSet<String>> synonymsMap = FileService.generateSynonymsMap(inputWrapper.getSynonymsFile());
+        double plagiarismRatio  = plagiarismService.checkPlagiarism(inputWrapper);
 
-            List<NTuple> nTuples1 = FileService.generateTuples(inputWrapper.getInputFile1(), inputWrapper.getN());
-
-            List<NTuple> nTuples2 = FileService.generateTuples(inputWrapper.getInputFile2(), inputWrapper.getN());
-
-            double plagiarismRatio  = plagiarismDetector.checkPlagiarism(synonymsMap, nTuples1, nTuples2);
-
-            System.out.println("Plagiarism Percentage is " + plagiarismRatio * 100 + " %");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        System.out.println("Plagiarism Percentage is " + plagiarismRatio * 100 + " %");
 
     }
 
-    public double checkPlagiarism(HashMap<String, HashSet<String>> synonymsMap, List<NTuple> nTuples1, List<NTuple> nTuples2) {
-        double count = 0;
-
-        for (NTuple nTuple1 : nTuples1) {
-            for (NTuple nTuple2 : nTuples2) {
-                if (nTuple1.isMatch(nTuple2, synonymsMap))
-                    count++;
-            }
-        }
-
-        return count / nTuples1.size();
-    }
-
+    /**
+     * Method to validate the command-line arguments
+     * @param args
+     * @return InputWrapper
+     */
     public InputWrapper validateInput(String args[]) {
 
         if (args.length < NUM_ARGS - 1) {
             System.out.println("Insufficient Arguments..");
+            System.out.println();
+            System.out.println("Usage: java -jar <name>.jar <synonym_filename> <input1_filename> <input2_filename> <N_value>");
             System.exit(1);
         }
 
@@ -60,10 +49,27 @@ public class PlagiarismDetector {
         inputWrapper.setInputFile1(args[1]);
         inputWrapper.setInputFile2(args[2]);
 
-        if (args.length == NUM_ARGS)
-            inputWrapper.setN(Integer.parseInt(args[3]));
+        if (args.length == NUM_ARGS) {
+            if (isInteger(args[3]));
+                inputWrapper.setN(Integer.parseInt(args[3]));
+        }
 
         return inputWrapper;
+    }
+
+    /**
+     * Method to check if a String is Integer or not
+     * @param input
+     * @return boolean
+     */
+    public boolean isInteger( String input )
+    {
+        try {
+            Integer.parseInt( input );
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 }
 

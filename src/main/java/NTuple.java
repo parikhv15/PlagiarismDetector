@@ -8,6 +8,10 @@ import java.util.List;
 /**
  * Created by vrajp on 5/17/2016.
  */
+
+/**
+ * Class to represent a N-tuple
+ */
 public class NTuple {
     private List<String> words;
 
@@ -38,6 +42,12 @@ public class NTuple {
         N = n;
     }
 
+    /**
+     * Method to check whether the 2 N-Tuples match or not
+     * @param nTuple
+     * @param synonymsMap
+     * @return boolean
+     */
     public boolean isMatch(NTuple nTuple, HashMap<String, HashSet<String>> synonymsMap) {
         List<String> words1 = this.getWords();
         List<String> words2 = nTuple.getWords();
