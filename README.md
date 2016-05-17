@@ -9,7 +9,7 @@
  1. file name for a list of synonyms
  2. input file 1
  3. input file 2
- 4. (optional) the number N, the tuple size.  If not supplied, the default should be N=3
+ 4. [optional] the number N, the tuple size.  If not supplied, the default should be N=3
 
  Program outputs the percent of tuples in file1 which appear in file2.
 
