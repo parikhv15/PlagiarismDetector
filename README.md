@@ -9,7 +9,7 @@
  1. File name for a list of synonyms
  2. Input file 1 name
  3. Input file 2 name
- 4. Tuple Size
+ 4. Tuple Size [Default is 3]
 
  Program outputs the percent of tuples in file1 which appear in file2.
 
