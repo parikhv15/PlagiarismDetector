@@ -6,10 +6,10 @@
 
  It takes in 3 required arguments, and 1 optional argument.
 
- 1. file name for a list of synonyms
- 2. input file 1
- 3. input file 2
- 4. Tuple Size [Default is 3]
+ 1. File name for a list of synonyms
+ 2. Input file 1 name
+ 3. Input file 2 name
+ 4. Tuple Size
 
  Program outputs the percent of tuples in file1 which appear in file2.
 
