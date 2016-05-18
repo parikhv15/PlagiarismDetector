@@ -61,6 +61,11 @@ public class PlagiarismDetector {
         if (args.length >= NUM_ARGS) {
             if (isInteger(args[3]))
                 inputWrapper.setN(Integer.parseInt(args[3]));
+            else {
+                System.out.println();
+                System.out.println("Warnings: Invalid N value : Defaulting to 3");
+                System.out.println();
+            }
         }
 
         return inputWrapper;
