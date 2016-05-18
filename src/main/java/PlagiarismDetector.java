@@ -25,7 +25,10 @@ public class PlagiarismDetector {
 
         double plagiarismRatio  = plagiarismService.checkPlagiarism(inputWrapper);
 
+        System.out.println("---------------------------------------------------------------------------------------------");
         System.out.println("Plagiarism Percentage is " + plagiarismRatio * 100 + " %");
+        System.out.println("---------------------------------------------------------------------------------------------");
+
 
     }
 
