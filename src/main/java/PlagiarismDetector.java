@@ -43,14 +43,20 @@ public class PlagiarismDetector {
             System.exit(1);
         }
 
+        if (args.length > NUM_ARGS) {
+            System.out.println("Warnings: More Arguments Supplied");
+            System.out.println();
+            System.out.println("Usage: java -jar <name>.jar <synonym_filename> <input1_filename> <input2_filename> <N_value>");
+        }
+
         InputWrapper inputWrapper = new InputWrapper();
 
         inputWrapper.setSynonymsFile(args[0]);
         inputWrapper.setInputFile1(args[1]);
         inputWrapper.setInputFile2(args[2]);
 
-        if (args.length == NUM_ARGS) {
-            if (isInteger(args[3]));
+        if (args.length >= NUM_ARGS) {
+            if (isInteger(args[3]))
                 inputWrapper.setN(Integer.parseInt(args[3]));
         }
 
@@ -70,6 +76,7 @@ public class PlagiarismDetector {
         } catch (NumberFormatException e) {
             return false;
         }
+
     }
 }
 

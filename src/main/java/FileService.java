@@ -29,7 +29,7 @@ public class FileService {
 
             String line;
             while ((line = br.readLine()) != null) {
-                String[] words = line.toLowerCase().split(" ");
+                String[] words = line.toLowerCase().split("\\s+");
 
                 HashSet<String> wordSet = new HashSet<String>(Arrays.asList(words));
 

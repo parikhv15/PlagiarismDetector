@@ -48,6 +48,9 @@ public class PlagiarismService {
     public double calculatePlagiarismRatio(HashMap<String, HashSet<String>> synonymsMap, List<NTuple> nTuples1, List<NTuple> nTuples2) {
         double count = 0;
 
+        if (nTuples1.size() == 0)
+            return count;
+
         for (NTuple nTuple1 : nTuples1) {
             for (NTuple nTuple2 : nTuples2) {
                 if (nTuple1.isMatch(nTuple2, synonymsMap))
