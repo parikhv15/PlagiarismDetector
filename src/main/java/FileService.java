@@ -39,7 +39,10 @@ public class FileService {
                 }
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println();
+            System.out.println("Invalid File Name: " + synonymsFileName);
+            System.out.println();
+            System.exit(1);
         } finally {
             if (br != null)
                 br.close();
@@ -69,7 +72,10 @@ public class FileService {
             }
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println();
+            System.out.println("Invalid File Name: " + fileName);
+            System.out.println();
+            System.exit(1);
         } finally {
             if (br != null)
                 br.close();
